@@ -1,0 +1,1 @@
+two-halves of a puzzle, you give the public half to computers you want to communicate with. hold onto the private key yourself.

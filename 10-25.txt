@@ -1,0 +1,28 @@
+sequel gem is somewhat database agnostic
+  it will handle whichever database we're using
+  sqlite gem communicates between ruby and sqlite
+
+  ruby -> sequel gem -> sqlite gem -> sqlite database
+
+same could be said for datamapper:
+  ruby -> datamapper gem -> sqlite gem -> sqlite database
+
+private_class_method
+
+File.dirname(__FILE__) # get current file and return the name of parent directory
+
+require 'rack/test'
+set :environment, :test
+
+def app
+  Sinatra::Application
+end
+
+describe 'Reverse Service' do
+  include Rack::Test::Methods
+
+  it "should load the home page" do
+    get '/'
+    last_response.should be_ok
+  end
+end

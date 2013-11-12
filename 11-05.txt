@@ -1,0 +1,31 @@
+build vs build_association
+  parent.children is empty collection when empty
+  child.parent is nil when empty
+  can't chain methods off nil
+
+`first_author.posts << Post.new` loads entire array of objects into memory (return value)
+`first_author.posts.build(Post.new)` loads just one object into memory
+
+delegate :name, :to => :author, :allow_nil => true
+
+def author_name # delegator
+  self.author.name if author
+  self.author.try(:name)
+  self.author && self.author.name
+end
+
+form_tag family
+  knowledge of forms
+form_helper family
+  knowledge of forms and ActiveRecord Objects
+
+helpers are available in all views
+log: `tail -f log/development.log`
+
+index foreign keys
+
+
+migrations
+models
+
+<%= f.select :author_id, options_for_authors_select %>

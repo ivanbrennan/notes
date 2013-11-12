@@ -1,0 +1,25 @@
+rspec it_behaves_like
+betterspecs.org
+method def: who's the main character here?
+in playlister, song is the atomic unit (main character)
+namespaces and objects
+decoupling functionality makes testing methods easier
+instance variables shouldn't change often
+interpolation (not puts) calls to_s
+
+testing:
+  mocks test behavior and not results
+  generally, lower on stack more important to test
+    gui (view, erb)
+    controllers (generator/parser/cli)
+    models (most important to test)
+    database
+
+get in the habit of always running everything from the project's root directory
+
+modules: self.included(base)
+
+In computer science, persistence refers to the characteristic of state that outlives the process that created it.
+
+parsing: as little css in each method as possible
+def value_missing; "Coming soon..."; end;   # sensible default

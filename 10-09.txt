@@ -1,0 +1,65 @@
+stubbed student profiles (for testing)
+sqlite gem
+  CREATE TABLE IF NOT EXISTS
+
+sql:
+  insert and update
+  def insert
+
+class Dog
+
+  attr_accessor :name, :color
+  attr_reader :id
+
+  def self.find(id)
+    find = "SELECT * FROM dogs WHERE id = ?"
+    result = @@db.execute(find, id)
+    Dog.new_from_db(result.first)
+  end
+
+  def self.new_from_db(row)
+    d = Dog.new
+    d.id = row[0]
+    d.name = row[1]
+    d.color = row[2]
+    d.saved!
+  end
+
+  def saved!
+    @saved = true
+  end
+
+  def saved?
+    @saved
+  end
+
+  def save
+    saved? ? update : insert
+  end
+
+  def insert
+    sql = "INSERT INTO dogs (id, name, color) VALUES (?, ?, ?)"
+    @@db.execute(sql, self.name, self.color)
+    # quickly find the dog's id in SQL
+    find = "SELECT  id  FROM  dogs  WHERE name = ? ORDER BY id DESC LIMIT 1"
+    # set the dog's @id to that
+    results = @@db.execute(find, self.name)
+  end
+
+  def update
+    if saved?
+      sql = "UPDATE dogs SET name = ?, color = ? WHERE id = ?"
+      @@db.execute(sql, self.name, self.color, self.name)
+    end
+  end
+
+  def ==(other_dog)
+    self.id == other_dog.id
+  end
+
+end
+
+ruby:
+  code in the body of a class, not wrapped in a method, is evaluated (executed) at runtime
+
+objects: ORM - classes represent tables, rows represent objects

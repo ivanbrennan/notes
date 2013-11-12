@@ -1,0 +1,43 @@
+service oriented architecture (SOA)
+
+================
+deploying an app
+================
+virtualization
+  isolation (except some hardware issues)
+  1 machine thinks it's many
+    independent os and everything
+  provisioning: requesting a server to be created
+  there's a little performance overhead
+
+ubuntu lts 12.04
+
+digitalocean
+  ssh root@...
+  useradd --help
+    useradd -s /bin/bash -G sudo -m ivan
+    passwd ivan
+    exit
+    ssh ivan@...
+
+  sudo nano /etc/ssh/sshd_config
+
+  create new admin to use
+  disable root
+
+setup
+deploy application
+apt is like brew for unbuntu
+ping
+
+Linux distribution
+  standardize filesystem layout
+  led to more automation
+    package managers & precompiled applications
+
+Ubuntu Linux 12.04 x64 Server
+512MB of RAM
+1 CPU
+20GB Disk
+
+must push to github before deploying to server

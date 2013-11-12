@@ -1,0 +1,17 @@
+slugify before_create (is this better than `after_create`?)
+always use absolute paths in html (from project root)
+  all assets start with '/'
+unit test vs acceptance test (capybarra)
+let vs let!, given vs given!
+  evaluates immediately, but still only once
+  don't use before block to set up test date
+scoping
+  params[:student][:name]
+  instead of params[:name]
+  data that's important should be wrapped in something
+
+single-letter variables: theprofoundprogrammer.tumblr
+  unless you can see where it came from (block) or it's an iterataor (i)
+
+Student.create
+  mass assignment

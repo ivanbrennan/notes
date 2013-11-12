@@ -1,0 +1,15 @@
+sqlite
+  base
+  razorsql
+  naming conventions
+    foreign key column: "orders_id"
+    table names are plural
+  primary keys and foreign keys
+
+shitscottsays: ask that again with more words
+
+domain models
+
+join tables
+
+sinatra: dashing

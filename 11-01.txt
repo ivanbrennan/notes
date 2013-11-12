@@ -1,0 +1,28 @@
+scaffold: model, controller, views
+resource: model, controller
+
+more than 7 actions for a controller => you have a resource you haven't discovered
+rails app is a rack app
+  params, request
+
+gem 'better_errors'
+gem 'binding_of_caller'
+
+implicite rendering
+explicite rendering
+
+action view
+route methods help us generate html
+  eg. post_path()
+
+ActionView
+ActionController
+ActiveRcord
+
+form helpers ending with _tag
+
+mass assignment vulnerabilities
+<resource>_params
+signed form
+
+breeze

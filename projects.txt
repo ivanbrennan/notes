@@ -1,0 +1,117 @@
+touch command
+writer/coder collaboration on coding blog
+rails destroy generator
+difference between dynamically defining attributes on class and on singleton class
+database viewer
+tabs manager?
+ActiveRecord split screen to show SQL under the hood
+something looking at HTTP requests in more detail?
+http://en.wikipedia.org/wiki/Filename_extension
+http://stackoverflow.com/questions/3926324/dot-in-file-name
+
+                          Id            Name        Age
+                        ┌–––––––––┬–––––––––––––┬–––––––––––┐
+orm instance is a row <#ThisInstance @name="Ben" @age=32>   |
+                        |         |             |           |
+  instance inserted into table
+
+syminks and hardlinks (no-op?)
+  ln flags
+  interpreting man page for ln
+    how to read the synopsis
+    play around with some examples
+  http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/
+  https://github.com/holman/dotfiles
+language vs dsl
+simple file transfer to server
+spike's PS1
+nginx configuration
+dotfiles symlinked to git repo
+virtualbox
+capistrano
+load path (rackup)
+learning how to learn: scattergun
+which dialect are we speaking?
+
+top 10 git typos (git clong)
+git cheatsheet
+  unstage a file
+  check a branch's tracking
+  list remotes
+  add remote
+  push -u
+  delete a branch (local and remote)
+    git branch -d <localBranch>
+    git push origin :<remoteBranch>
+    git push origin --delete <remoteBranch> (as of v1.7.0)
+
+3-headed professor programming
+  pairing, driver, navigator
+
+square git (fork, remote, original, local)
+
+kEnd
+tIDENTIFIER
+
+lazy interpretation (short circuits)
+using raise to debug
+blocs, procs, lambdas
+
+how to read rspec errors
+
+encapsulation vs learning how it works (architect vs builder)
+open vs new
+some aspect of environment setup
+useful bash aliases in programming
+beginner code smells
+
+nokogiri
+debugging with pry
+@variable vs variable vs self.variable (setting vs getting)
+class names are constants
+what is rake?
+what is bundle?
+debugging - locked out vs scouring tunnels
+parallel assignment
+recursive initialization
+sigils
+so much good stuff to read (POTD, blogs, reading links, etc)
+search filter (real object [siv] analogy)
+define empty class, create an instance of it, define an
+  instance method for that instance. the method now exists
+  for that instance only (not for other instances of the
+  same class)
+In general, polymorphism is the ability to appear in different forms
+  mythology analogy (Zeus)
+write your own join
+program to find out what's playing on the flatiron speakers
+database connection object in ruby (what the fuck is it?)
+procedural vs functional?
+def jam alien sandwich
+simplecov (how does it work and how to use it)
+bash commands (find, grep, piping)
+link rot
+duodecimal
+mapping out require/require_relative/environment etc.
+IO read/write options
+require vs require_relative
+ash (name)
+how to loop with Dir in config/environment.rb
+bash touch existing file
+group work, beyond certain complexity collaboration is a challenge (and group size affects that balance point)
+main character/atomic unit of domain
+debugging attr_accessors and the self keyword
+trailerparkboys
+rack: call env @app pattern
+request, params metaphore (messanger with bag of stuff?)
+rack app metaphor (audio effects rack?)
+the lazy interpreter says...
+what is a controller? (air-traffic example?)
+data visualizations
+context (erb, ruby, sinatra, etc.)
+sqlite://artists.db (protocol, location)
+call and response (http)
+multiple DSLs naming conflicts?
+ssh-key pictographs
+this yak is getting the fuck shaved out of it
+rubular for ps1

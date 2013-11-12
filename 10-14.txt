@@ -1,0 +1,30 @@
+refactoring to OO
+  phone-numbers
+  jukebox
+  path
+  reverse-each-word
+  apple_picker
+  holiday_supplies
+  deli-counter
+  hashketball
+  version-sort
+  towers
+  blog-schedule
+  sfw-reddit
+  pigeon organizer
+  pigeon organizer2
+  sql quiz
+  crowdfunding
+  debug jukebox
+  anagram
+  handshakes
+  avi's jukebox
+  spencer's scraper
+metaprogramming
+  rubymonk YIELD
+  lecture
+  whytheluckystiff
+blog
+koans
+sql
+  joins

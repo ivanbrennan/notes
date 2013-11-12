@@ -1,0 +1,75 @@
+don't use has_one
+QUESTION: capybara visit and page
+  implied hash braces coming from rails?
+  redirect loses info because it's a whole new instance of the controller class?
+    `render :new` instead
+  rake routes: routes without prefix?
+  authenticity tokens?
+  references vs association_id
+
+build accepts column names (:genre_id => genre.id) OR abstractions of association (:genre => genre)
+
+New Feature:
+  does it change the databse?
+    what data and stored where?
+  write migrations
+    start simple (just a few columns)
+  how does that affect my models?
+  new associations?
+  go into console and play with the data
+    get intimate with the objects!
+  add to seeds or write a test
+  what URL is this available on?
+  build a route (simpler routes first)
+  build the corresponding controller action
+    what data do I need?
+    does anything else need to be done to it?
+  what view gets rendered?
+    does it have the necessary data?
+    does it need helper methods?
+    what's my goal? (just hardcode the HTML)
+
+Validations:
+  rapid prototyping
+  set up validation in model
+  control flow in controller action
+  template should tell what's invalid
+  `validates` for macros
+  `validate` for custom-build methods
+
+Forms
+  where is the form going to submit to?
+  what fields are going to be in the form?
+  what is the main object the form is concerned with?
+  how do i want params to look for easier data processing?
+
+When a request coms into the rails router:
+  find the right route ('songs#index')
+  metaprogram the appropriate Rack app
+
+routes `as`
+  routes with just static string vs those with variables
+    automatically generates name for the route
+
+form element
+  `name` attribute determines where stored in params
+  `name="song[name]"` --> params[:song][:name]
+    by Rack convention
+  `<input type="checkbox" value="<%= genre.name %>" name="song[genre_ids][]">` --> store values in array params[:song][:genres_id]
+    also Rack convention
+
+rails decorator order conventions
+
+`mixtape.song` exposes the associate song object
+
+join table: "what the hell's behind door 14?"
+
+strong params
+  `params` is a method call (not a variable) so it's in scope for any action or view. It's a method defined in ActionView
+
+6:23 moving the mass assignment into the model?
+  accepts_nested_attributes_for
+  song_attributes=()
+
+`form_for @mixtape` is scoped to @mixtape
+  `fields_for :songs` is further scoped to ... <6:31 - 6:38>

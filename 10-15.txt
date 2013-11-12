@@ -1,0 +1,49 @@
+todo: blog repo master vs source
+
+Modules
+  naked functionality devoid of a metaphor
+  
+  can't instantiate (no ::new method)
+  
+  just has methods (not class methods and instance methods)
+  
+  a module containing 2 modules:
+    Memorable::InstanceMethods
+    Memorable::ClassMethods
+
+  also, note that "Memorable", "InstanceMethods", "ClassMethods" are all constants that point to modules, and they're accessed with the expected syntax
+
+  keywords: include, extend
+    include mixes in a module's methods as instance methods
+    extend mixes in a module's methods as class methods
+    any naming conflict is resolved chronologically (last defined method is used)
+
+    you'll mix in Module::SubModule to get the methods of SubModule
+      if you just mix in Module, you've accessed a module with nothing in it
+
+  naming convention: behaviors
+
+Type constraints
+  objects shouldn't know about eachother
+
+  rather than building constraints into objects, we can communicate expectations through naming conventions (clear without being verbose), good design pattern, inference, natural sense, and API
+
+  API: Application Program Interface
+
+  test suite describes the API, narrating how the program is intended to be used
+
+    we only build what we need, and the suite displays how we biuld and how it's used
+
+    if you write good code (and not crappy comments), both the person reading it and the compiler will come to the same conclusion
+
+    hook/callback self.extended(the_class)
+
+      self.extended(the_class)
+        the_class.reset_all
+      end
+
+      does reset_all need to be defined first?
+
+environment
+  requires all non-rspec dirs/files
+  spec_helper required by all specs, requires environment

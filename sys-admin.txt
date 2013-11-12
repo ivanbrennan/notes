@@ -1,0 +1,88 @@
+#ssh into server as root
+#create a new user with name "deploy" in group sudo
+#change that user's passwd to flatironruby003
+#disconnect
+#reconnect as user "deploy"
+#disable root
+#login as deploy
+
+#Prepare server to host application
+#  update & upgrade apt
+#  install compilers
+#  install various Ruby packages
+#  install git
+#  install nokogiri dependencies
+#  install bundler
+#  install gems
+#  install passenger
+
+  HTTP request flow
+    browser -> nginx -> passenger (spawning) -> rackup -> sinatra
+      also clustering: vertical scale vs horizontal scale
+
+#  turn on webserver
+#    install nginx
+
+  capistrano orchestrates a workflow to be performed on multiple servers
+
+
+deploy simple version first
+  configure app to show errors
+
+logrotate
+======================
+
+/opt/nginx/conf/nginx.conf
+  port 8000
+    simple
+  port 80
+    student
+
+server>
+  mkdir -p sinatra-deploy-ruby-003
+    clone into current
+    cd into current
+    bundle
+      ps aux | grep nginx3
+      ps aux | grep passenger
+      capistrano takes care of: pull and touch current/tmp/restart.txt
+    project root
+      Gemfile
+        `gem 'capistrano', '~>2.0'`
+      `capify .`
+        config/deploy.rb
+          user, app, repo, deploy_to, no sudo, scm, server_ip
+
+local>
+  `cap deploy:setup`
+    mkdirs -p on servers
+      releases, shared
+    chmod g+w on servers
+  git push
+  `cap deploy`
+    -determine latest commit
+    -clone into timestamped directory in releases
+    -cd into it and checkout latest commit
+    -write timestamp into a file called REVISION
+    -bundle
+    -set permissions
+    -deploy:create_symlink
+      nginx thinks app is in current
+      capistrano created `current` -> releases/<most-recent-timestamp>
+      restart (touch tmp/restart.txt)
+  if you run `cap deploy:rollback`
+    delete current and create new symlink (current) to previous release
+    deploy:create_symlink
+
+    THIS WAS ALL ON PORT 8000 for sinatra-deploy-ruby-003
+    NOW LET'S SET UP PORT 80  for sinatra-student
+by default capistrano deploys from master
+local>
+  `git co -b deployment`
+  `capify .`
+  set up config/deploy.rb
+    `set :branch, "deployment"
+  port? we'll tell nginx, not capistrano, about port
+  git commit, push
+  `cap deploy:setup`
+  `cap deploy`

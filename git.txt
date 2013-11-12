@@ -1,0 +1,27 @@
+github is a repository of repositories
+
+merging feature branch into master branch
+  --discards commit history and just shoves latest version of feature branch into master
+
+git add
+  --if it’s a directory, adds all the files in that directory recursively
+
+pull request: master (to) compare(from)
+
+over-communicate
+organization
+	analog solutions ;)
+
+add and commit separate: granularity
+
+merge occurs automatically on commit once all conflicts resolved
+
+commit message: first line (title), blank line, more thorough description
+
+keep branches small as possible (remerge often)
+
+git checkout HEAD (HEAD -> most recent commit)
+
+git reset --hard HEAD (discard changes and rollback to most recent commit)
+
+best practice for fork to track upstream

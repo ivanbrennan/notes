@@ -1,0 +1,33 @@
+hit submit: build http request and send get/post 
+
+  get request:  header, params are placed in the query string
+  post request: params placed in body
+
+  action determines the route
+
+route starting with '/' is absolute path
+
+'back' button doesn't generate new request
+
+submit made post request, server said to redirect,
+so the client made new request, server responded
+
+reloader won't pick up changes to html (just to requests)
+
+route order: specific to general
+
+class instance persists for the life of the route
+
+erb partials
+<%= erb :'layouts/_header' %>
+
+destroy from link: get request
+if p.save
+p.update(request.params)
+
+===============
+sinatra route parameters are accessible via the params hash, not directly
+  get '/pigeons/:id'
+    Pigeon.get(params[:id].to_i)
+    # NOT Pigeon.get(:id)
+  end

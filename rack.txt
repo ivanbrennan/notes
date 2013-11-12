@@ -1,0 +1,40 @@
+Questions:
+  #call on new instance with each request?
+  #call or ::call?
+
+HTTP session: series of request-responses
+  request:
+    verb, resource
+    request headers
+    message body (optional)
+  response:
+    status-line
+    response headers
+    message body (optional)
+  verbs: get, post
+
+rack app: like a CLI for browser
+  invoke #call for each new browser request
+  ruby object, not a class
+  responds to `call`
+  takes 1 argument: environment
+    hash with CGI-like headers
+    app can modify
+    includes (among others)
+      REQUEST_METHOD
+      SCRIPT_NAME (path to app)
+      PATH_INFO (path to resource within app)
+      QUERY_STRING
+      SERVER_NAME
+  returns 3 part array (http)
+    request:
+      verb, resource
+      request headers
+      message body (optional)
+    response:
+      status-line > 100 (string?)
+      response headers
+        respond to #each with key-value pairs
+          keys are strings
+      message body (optional)
+        respond to #each with strings

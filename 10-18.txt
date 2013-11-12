@@ -1,0 +1,29 @@
+Twitter
+  config.consumer_key
+  config.consumer_secret
+  config.oauth_token
+  config.oauth_token_secret
+
+http response codes
+  http rapper codes
+
+sessions, cookies, object attributes
+
+trace route
+
+127.0.0.1 alias for localhost
+public ip addresses and local ip addresses
+  subnets
+
+hub, switch, router
+
+a Proc is like a method frozen in time as an object
+
+Ctrl-C
+Ctrl-Z
+ps aux | grep ruby
+kill -9 <Process ID>
+
+it's not view's (erb) job to create data
+
+don't support multiple types of persistance (db and class level) in one ORM

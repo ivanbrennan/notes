@@ -1,0 +1,101 @@
+migrations vs models
+  a migration that adds a column adds the corresponding attribute (and accessors) to the model
+  associations are stated in the model, but can add foreign key columns to tables
+`rake db:reset` ?
+  migrations affect schema, not the data that's been stored (right?)
+bundler
+  `bundle`, `bundle install` the same?
+    reads Gemfile and creates Gemfile.lock
+  bundler not listed in Gemfile or Gemfile.lock, but `require`ed in config/environment
+
+rake console?
+  Pry.start
+is orm just a further separation of data from behavior?
+deployment: symlinked database
+MVC
+  how to
+    render view
+    submit form
+    CRUD model
+    CRUD database
+  http
+    get
+    post
+    params
+    session
+  how to communicate between:
+    sinatra to erb (render view)
+    erb to sinatra (submit form)
+
+RACK
+  why is StudentsController mounted as middleware instead of the main app?
+
+ORM/Sequel
+  what's a dataset instance?
+  why are we requiring sinatra and sequel in environment? (oversight)
+  is a new instance of the app instantiated for each http request
+  why do we need to use symbols to access nested attributes?
+git
+  detached head?
+  (git merge origin/master) vs (git merge origin master)
+
+ruby
+  instance vars don't have to be declared right away? (can be declared in
+    methods other than initialize and will persist)
+  jukebox runner (order of method defs in a required module [run before defined])
+  instance_variable_get wants a symbol argument. But it will accept strings too: why?
+  class attr_accessor?
+  modules?
+  guard watch file
+
+  class Artist
+    attr_reader :songs
+    def add_songs(songs)
+      songs   # is this the method variable or the attr_reader?
+    end
+  end
+
+  rspec before(:each) behavior
+  describe "Thing" vs describe Thing
+  
+  no require_relative in student_spec ?
+  !id.nil? == !(id.nil?)
+
+  instance methods can call class methods, but can
+    class methods call instance methods?
+
+  stuff inline in a class def gets run at runtime. method calls run inline (at runtime) are class methods (CORRECT?)
+    "self." is implied prepending the method call?
+
+  inside class def:
+    def self.count
+      sql = "SELECT COUNT(*) FROM #{self.table_name};"
+      result = @@db.execute(sql).flatten.first    # is flatten.first necessary here?
+    end
+
+  tap method?
+
+  def initialize(id = nil)
+    @id = id    # is that unintentionally calling attr_reader?
+    if id.nil?
+      @id = self.class.count + 1
+    end
+    @saved = !id.nil?
+  end
+
+  require vs require_relative (and gem vs module vs other rb file)
+
+    #How does all this work?
+  File.join(File.dirname(__FILE__), '../config/environment.rb'))
+
+  require_relative doesn't need file extension ('.rb') ?
+  how to do Dir loop in environment.rb
+
+sql
+  projects_id vs project_id (naming convention for foreign keys)
+  sql replacement
+  dog.with.sql.rb insert method lines 36-38 ?
+  UPDATE table WHERE
+  SELECT COUNT(*) FROM #{self.table_name};
+  SELECT MAX(id) FROM table
+  UPDATE table set name = ? where id = ?

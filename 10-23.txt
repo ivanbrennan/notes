@@ -1,0 +1,99 @@
+SINATRA ADVENTURE
+session
+  mechanism to fake statefulness
+  persists across all requests
+params
+
+each request is a separate instance of the class
+===========
+Duct tape
+  out the door
+  keep it simple
+    wrote long letter no time for short one
+  duct tape programmer joel spolsky
+  how do you think about problems?
+
+culture
+  hobbies
+  show
+===============
+
+Model-view-controller
+  abstraction points
+  model: chef
+  data: food
+  controller: controls interactions between data and model (application logic)
+  view: presentation of data
+
+Restful url
+resource abstraction
+  URI
+  CRUD
+code swarm
+
+**Sinatra request cycle**
+
+Forms
+  attributes describe the form
+    method, action
+    `for` attr (label) corresponds to `id` attr of control
+  controls
+    *name
+  rack params object
+
+=========================
+skinny controller, fat model
+use Bundler if you're using gems
+=======================
+Load order:
+rackup
+        ->  environment
+                        ->  bundler
+                        ->  app
+        ->  run app
+=======================
+
+classic Sinatra application:
+  run Sinatra::Application
+
+modular Sinatra application:
+  class Application < Sinatra::Base
+  run Application
+
+  class MainApplication < Sinatra::Base
+  class ContentApplication < Sinatra::Base
+  use ContentApplication
+  run MainApplication 
+
+  module BundlerSinatra # these could be wrapped in a folder instead of a module if you chose
+    class ApplicationController < Sinatra::Base
+      configure :development do
+        register Sinatra::Reloader
+      end
+    end
+    class MainController < Application
+    class ContentController < Application
+  end
+  use BundlerSinatra::ContentController
+  run BundlerSinatra::Main
+
+each Sinatra application (could be multiple within app.rb) is a controller
+
+===================
+
+bundler-sinatra/
+  app/
+    controllers/
+      application_controller.rb
+      main_controller.rb
+    models/
+    views/
+      main/
+    config.ru
+    environment.rb
+    Gemfile
+
+class MainController < ApplicationController
+  set :views, settings.root + '/app/views/main'
+
+end

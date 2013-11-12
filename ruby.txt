@@ -1,0 +1,145 @@
+read attr_accessor.rb a few times
+  macros
+raise hack for debugging
+
+================================
+hooks & callbacks
+instantiation/initialization
+
+class User
+  attr_accessor :name
+  def initialize(name)
+    @name = name      # this is preferable inside initialize
+    #self.name = name # this is preferable everywhere outside of initialize
+  end
+end
+
+================================
+#Code in the body of a class definition is executed when loaded into memory,
+#unlike method definitions, which are only executed when called. So...
+
+class User
+  puts "I am ruby reading the class #{self}"    # prints to screen
+end
+User.new                                        # does NOT print to screen
+User.new                                        # does NOT print to screen
+
+================================
+class Person        # bob = Person.new
+
+  def name=(str)    # bob.name = "Bob"
+    @name = str     #   equiv to bob.name=("Bob")
+  end               #   because method name ends in "="
+
+  def name(str)
+    @name
+  end
+end
+
+=================================
+
+testing conditions: go from specific to general
+
+literal constructors `[`, `{`, etc.
+
+Interpolation #{} only works with double-quotes.
+Don't use single quotes.
+
+variable scope vs method scope vs block scope
+
+block inherits the scope it was defined in
+  reassignments will stick
+  but new variables don't export
+
+scope helps memory management (garbage collection)
+  block ends, release memory (variables)
+
+CONSTANT_NAME
+Class_Name
+
+constant scope (methods can see them, but not local variables)
+
+last_returned_value = _
+
+in Ruby `run system command`
+reddit_json = (`curl www.reddit.com/.json`)
+
+some Ruby http clients (gems)
+  # 'open' returns a file object
+  reddit_json = open('www.reddit.com/.json')
+
+  reddit_json = RestClient.get('www.reddit.com/.json')
+  reddit_json = Patron.get('www.reddit.com/.json')
+  reddit_json = Faraday.get('www.reddit.com/.json')
+
+binding.pry
+
+JSON.parse(open('www.reddit.com/.json').read)
+
+class Dog
+  BREEDS = ["bulldog", "poodle"]
+end
+
+Dog::BREEDS
+
+====================
+scraping
+  symantic selectors
+  open-uri comes with ruby (not listed in gems)
+  require loads it globally (so open() instead of Open-URI::open() )
+  encapsulate scrape aspects in their own methods (parse_student_name())
+  social parent if chain (possible nils along the chain)
+  db.execute("INSERT INTO students (name, tagline) VALUES (?,?)", "Jake", "His tagline")
+
+rspec
+  before() is a hook
+
+===================
+require nokogiri, openuri, sqlite3
+.attr(href)
+st = noko::html(open())
+st.css("span.comhead")
+
+node structure  (   parent  )
+.parent.css("tag.class tag")
+==================
+
+Private methods cannot be specified with a receiver.
+  method instead of self.method
+Protected methods can be called either with or without the self keyword
+  but, like private methods, cannot be called from outside the class
+====================
+
+THIS_CONSTANT_POINTS_TO_SOME_DATA
+ThisConstantPointsToAClassOrAModule
+==================
+super method calls constructor of parent class
+ancestors method
+==================
+
+running/editing spec files: don't change intentions of tests
+  (return values, etc.), but you might add stuff that correctly
+  sets up testing conditions (create/rm databases, etc.), as
+  long as the test isn't testing *that*
+===================
+Modules are used to group related classes, methods and constants (by putting them into separate modules)
+=================
+objects do not store methods, only classes can
+=====================
+
+     class C
+       class << self
+
+         # everthing here is at class scope
+
+         @a_class_instance_variable = 42
+
+         def a_class_method() @a_class_instance_variable end
+
+         alias_method 'one_class_method', 'to_another'
+
+         extend ABunchOfClassMethods
+
+       end
+     end
+==============

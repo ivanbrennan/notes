@@ -1,0 +1,18 @@
+ActiveRecord
+  migration wrapped in class
+    up and down as class methods
+  class name must correspond with filename
+
+Associations
+  belongs_to (always singular)
+  has_many (always plural)
+  constructors, mass-assignment
+  Pry.start
+    show sqlite commands and play around with it
+  parent object will generally save the children by default
+    order of creation, not nature of association
+
+  1. Make necessary schema changes
+  2. Wire up the associations
+
+  push will save and return an array

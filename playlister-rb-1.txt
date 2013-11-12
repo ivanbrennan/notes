@@ -1,0 +1,5 @@
+command line hardcoded or not ?
+rspec let (with initialization)
+
+File.dirname(__FILE__)
+Dir.foreach

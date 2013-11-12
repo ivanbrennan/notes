@@ -1,0 +1,61 @@
+minitest
+rspec for documentation
+
+driver/navigator
+  driver is the passive seat
+  navigator is the active seat
+
+chronic ruby gem
+  natural language time parser
+
+extend Top5
+include Top5
+
+  would work, though not best form
+
+develop locally, push up to a server (deploy)
+server (cloud) delivers html, css, js to users
+
+--- app
+| | rack [middleware]
+| V web server
+
+rack (middleware) common interface between web server and app
+
+0.0.0.0 same as localhost
+
+rack stack
+  nullify, @app.call, call env @app pattern
+
+`use` keyword add middleware to stack
+https://github.com/aviflombaum/playlister-rb/blob/rack-app/web_app.rb
+sinatra `request` object
+`unwrap`?
+`erb`
+
+Sinatra::Reloader
+==================================
+
+datamapper
+  getting started (not associations)
+  creating resources, properties, crud, find
+
+included hook hack
+  module DataMapper
+    module Tesource
+      def included(base)
+        base.send(:extend, ClassMethods)
+      end
+    end
+  end
+
+automigrate!
+::get
+::all
+::all(:name => "Avi")
+
+include vs extend and ancestors
+
+routes have urls and verbs (button press)
+the only things we can send across the internet are strings
+params

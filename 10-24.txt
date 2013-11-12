@@ -1,0 +1,4 @@
+outside end development
+spec/acceptance
+rspec configure
+capybarra

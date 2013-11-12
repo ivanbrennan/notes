@@ -1,0 +1,40 @@
+ORM
+  create schema
+  reset database
+  insert, query, etc.
+
+database
+
+possible interface methods (url)
+
+student class
+
+  find_by
+
+  name
+
+  save
+
+scraper class
+  call (populate database)
+    nokogiri
+    
+    if Student.empty? # where Student.empty? checks the DB or something
+      scraper = StudentSiteScraper.new
+      scraper.call
+    end
+
+    StudentScraper (for individual student)
+
+CLI class
+  command line version of student site
+    browse, show (complete profile), exit, help
+    optional: search, open student in browser, etc.
+    expose domain via cli
+
+site generator in _site
+  site generator class
+    collaborates with student class and erb views
+      index.erb (index page)
+      show.erb (profile page)
+  to produce 1 index.html and 41 student pages

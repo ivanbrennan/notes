@@ -1,0 +1,64 @@
+TODO: read sam's blog post (env)
+      get a notebook
+
+*htat*
+
+misconceptions, not bad habits, are hard to break
+
+ORM: encapsulation
+refactoring: write code that *humans* can understand
+models: bunches of data that hang around together
+  should be grouped into an object
+  12 or more things in one object => more than one object
+
+as many *positive* boolean methods as possible (instead of if!)
+  for clarity
+heredoc (on separate line)
+self inside class def but outside instance method def
+  refers to the class itself
+
+self in a class def:
+  inline = class
+  in class method = class
+  in instance method = instance
+
+use sql to sort/select rather than making ruby do it
+sanitation replacement
+
+subl vertical edit mode
+=================================
+
+ATTRIBUTES {column_name => data_type}
+
+def self.attributes_hash
+  ATTRIBUTES
+end
+
+def attributes_for_db
+  self.attributes_hash.keys.reject{|k| k == :id}
+end
+
+attr_accessor *attributes_for_db
+
+=================
+debugging: start at lowest level of stack
+organize methods (class methods not mixed in with instance methods)
+methods as invididual units of work (regardless of whether you'll reuse them)
+
+==================
+raise inspect
+==================
+
+private methods can't be called with an explicite reciever (self) so they
+  can only be called from within the object
+======================
+
+dynamic definition:
+  attr_accessor, 
+  define_method (for instance)
+  define_singleton_method (for class)
+dynamic dispatch:
+  send
+
+method_missing
+  hook like initialize()

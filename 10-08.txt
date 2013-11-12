@@ -1,0 +1,16 @@
+dynamic dispatch
+  command = "upcase"
+  "test".send(command) # => "TEST"
+  "test".send(command.to_sym) # => "TEST"
+
+superclass
+
+self points to whichever object recieves the method call in question
+
+def call
+  Student.all
+end
+
+refactoring
+  profile page object
+  seperate methods

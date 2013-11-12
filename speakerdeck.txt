@@ -1,0 +1,48 @@
+Ruby's Enumerable module - David Grayson
+
+https://speakerdeck.com/lvrug/rubys-enumerable-module-david-grayson
+http://blog.davidegrayson.com/2012/03/ruby-enumerable-module.html
+
+Array, Hash, Range, Set, String#chars, String#bytes
+object.is_a? Enumerable
+
+series of objects, can be lazily generated, can be infinite
+  lazy list
+
+methods #zip, #each_cons, #each_slice, #cycle, #one?, #drop_while
+
+enum = [1, 2, 3]
+enum.one? { |x| x.even? } => true
+enum.one? { |x| x.odd?  } => false
+
+days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+days.drop_while { |x| x != "sat" }
+  # => ["sat", "sun"]
+days.take_while { |x| x != "wed" }
+  # => ["mon", "tue"]
+
+class HouseCollection
+  include Enumerable
+  def each
+    yield house
+    # ... insert complex code
+    yield house
+  end
+end
+enum = HouseCollection.new
+
+Enumerable is a module
+Enumerator is a class that includes Enumerable
+??? => http://stackoverflow.com/questions/151505/difference-between-a-class-and-a-module
+Enumerable is a collection of methods
+Enumerator is a class that includes those methods
+
+enumerable = 1..3
+enumerator = enumerable.to_enum
+p enumerator.next # => 1
+p enumerator.next # => 2
+p enumerator.next # => 3
+p enumerator.next # => StopIteration exception
+
+
+Array and Range are two familiar examples

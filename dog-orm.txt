@@ -1,0 +1,26 @@
+SQLite3::Database.new dbname  # create and/or open
+SQLite3::Database.open dbname # open
+
+raise sql.inspect
+
+"SELECT id FROM dogs WHERE name = ? ORDER BY id DESC LIMIT 1"
+"INSERT INTO dogs (name, color) VALUES (?,?)"
+"UPDATE dogs SET name = ?, color = ? WHERE id = ?"
+
+def self.find(id)
+  find = "SELECT * FROM dogs WHERE id = ?"
+  result == @@db.execute(find, id)
+  Dog.new_from_db(result.first)
+end
+
+def self.new_from_db(row)
+   id, name, color = row[0], row[1], row[2]
+   Dog.new.tap do |dog|
+    dog.saved!
+    dog.id = id
+    dog.name = name
+    dog.color = color
+   end
+end
+
+def ==(other_dog)

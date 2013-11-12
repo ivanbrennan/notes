@@ -1,0 +1,88 @@
+'/' is a route to root
+restful routing: query string is part of the url (/blog/posts/:id)
+  as opposed to /blog/posts?id=54937859483
+by convention
+  post requests manipulate stuff on the server
+  get requests just retrieve resources from the server
+
+params comes along with each request
+checking for something in params is kind of like checking for a value in a hash
+
+rabbit-hole thin feedback on startup
+
+query string is everything after the `?`
+  http://place/page?name=scott&stuff=value
+
+server code: whatever's referenced in config.ru (and whatever it references)
+  changes here require restarting the server (unless sinatra-reloader)
+  you can change your views without restarting the server
+===========================
+
+bundler
+  require 'bundler'
+  Bundler.require will require anything specified in the Gemfile
+    source 'https://rubygems.org'
+  reads Gemfile and creates Gemfile.lock (don't edit this file, edit Gemfile)
+    order specified?
+    semantic versioning
+===========================
+
+sinatra app architecture
+
+load order
+  $ rackup => config.ru => environment => gems
+
+1) classical architecture: wrap procedural code by calling Sinatra::Application
+
+  Sinatra::Application
+
+2) modular architecture: wrap code into a controller (class that inherits from Sinatra::Base)
+
+  class MyApp < Sinatra::Base
+    get '/' do
+      "Hello"
+    end
+  end
+
+why called controllers?
+$LOAD_PATH ?
+namespacing
+
+controllers have actions, and those actions are controlled by routes
+urls become buttons for your site
+  "endpoints": interface (trigger)
+  naming conventions for those page urls
+=============================
+
+Sinatra: sending content (string) to browser
+block return string
+route returns last line of block
+erb :index
+  erb(:index) # erb is a method defined in Sinatra? #hamel as well? #moustache etc.
+==============================
+
+instance variable to erb by convention (mostly)
+controller: grab data from model, pass it to the view to process
+redirect
+  2 requests
+  302 Moved Permanently
+
+get '/students/:name' do
+  params[:name]
+  @student = Student.find_by_name(name)
+end
+
+a slash will break the glob ('/students/:name/more/stuff' as opposed to '/students/:name')
+
+params available in controllers and views (only available to model if you make it so with a method)
+you wand the resource described in the url (before `?`)
+
+
+rackup
+config.ru
+environment
+bundler
+mount middleware
+app controller
+
+heap?

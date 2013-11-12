@@ -1,0 +1,14 @@
+injection (user input, regex, shell)
+mass assignment: whitelist
+
+authentication: who you are
+  existing solutions (AuthLogic)
+authorization: what you have access to
+
+rails guides
+brakemanscanner.org
+shneier.com
+cigital.com/justice-league-blog
+rdist.root.org
+
+railscast 250: weakest link?

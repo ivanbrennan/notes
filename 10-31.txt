@@ -1,0 +1,9 @@
+cut it in half
+≥ 13 = messy
+  martin fowler: probably wrong to enforce?
+
+rails framework
+  value of empty folders: structure
+    whe doesn't Git allow empty folders?
+
+easier to integrate rspec, guard, etc. early in the workflow

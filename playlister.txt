@@ -1,0 +1,16 @@
+rspec spec.rb
+spec.rb contains a loop that recursively ensures all files in subdirectories
+delete spec.rb in future
+rspec with no commmand: load all files in spec dir that end with "_spec.rb"
+require_relative loads the spec_helper file that doesn't match that naming convention
+require_relative reads whole required file before continuing
+  spec_helper is requiring all the other necessary files
+
+environment.rb to load all necessary files
+
+$ rspec
+1. require 'rspec'
+2. Read a configuration from a .rspec
+3. Find...<fill in from video>
+
+

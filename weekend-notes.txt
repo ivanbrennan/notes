@@ -1,0 +1,97 @@
+-------- Instructions ---------
+# read existing files
+# read referenced docs
+# `bundle install`
+# rspec
+# `open coverage/index.html`
+# setup guard
+# `guard`
+# `rackup`
+# `rake db:migrate`
+# `rake scrape_students`
+
+======= Questions/Notes ========
+layout.erb
+  change `img` to `images`?
+  relative problem (images and stuff)
+index.erb
+  href with leading `/` or not?
+show.erb
+  src for images?
+
+=================================
+dataset is like a query (view) on the database
+
+http://sequel.rubyforge.org/rdoc/files/doc/model_hooks_rdoc.html
+  hooks CALL SUPER!!!
+  @was_new
+  dataset vs model
+  simple module
+  super ordering
+http://sequel.rubyforge.org/rdoc/classes/Sequel/Model.html
+  hooks
+  dataset methods
+http://sequel.rubyforge.org/rdoc/classes/Sequel/Model/ClassMethods.html
+  ::columns
+  ::create (calues = {}, &block)
+  ::dataset_module
+  ::db
+  ::db_schema
+  ::[]
+  ::find_or_create
+  ::implicit_table_name
+  ::include (mod)
+  ::subset
+  ::table_name
+  ::with_pk
+http://sequel.rubyforge.org/rdoc/classes/Sequel/Model/InstanceMethods.html 
+  ::new
+  ::values
+  #==
+  #===
+  #[][column]
+  #[]=
+  #destroy
+  #each
+  #exists?
+  #extend
+  #pk and #id
+  #inspect
+  #keys
+  #modified?
+  #new?
+  #pk_hash
+  #refresh
+  #save
+  #set (hash)
+  #update (hash)
+  #valid?
+http://sequel.rubyforge.org/rdoc/classes/Sequel/Dataset.html
+  enumerable
+  #distinct
+  #exclude
+  #grep
+  #group
+  #limit
+  #or
+  #order
+  #select
+  #select_group
+  #union
+  #where
+  <<
+  [][conditions]
+  all (&block)
+  columns
+  count (arg, &block)
+  each
+  empty?
+  first
+  get()
+  import and multi_insert
+  insert
+  last
+  map
+  max
+  update
+  inspect
