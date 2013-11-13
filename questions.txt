@@ -1,3 +1,7 @@
+sessions
+  by naming controller `SessionsController` do we gain any extra functionality, or is the name just by convention?
+  multiple cookies in a session possible? (or just multiple keys within a single cookie)
+
 migrations vs models
   a migration that adds a column adds the corresponding attribute (and accessors) to the model
   associations are stated in the model, but can add foreign key columns to tables
@@ -7,6 +11,7 @@ bundler
   `bundle`, `bundle install` the same?
     reads Gemfile and creates Gemfile.lock
   bundler not listed in Gemfile or Gemfile.lock, but `require`ed in config/environment
+  t.references vs t.integer
 
 rake console?
   Pry.start
@@ -99,3 +104,7 @@ sql
   SELECT COUNT(*) FROM #{self.table_name};
   SELECT MAX(id) FROM table
   UPDATE table set name = ? where id = ?
+  foreign key referencing a "set of columns" in another table???
+
+rails
+  form_tag and nested params

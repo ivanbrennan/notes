@@ -1,0 +1,29 @@
+Authentication: do we trust the user is who they say they are?
+
+  what tables?
+  change models/associations?
+  play with data
+
+Cookies
+  should be encrypted (signed)
+  encrypted session_key
+    sessions table on server, with columns: session_key, data
+    coat-check analogy
+
+helper_method
+
+Passwords
+  salt (like ssh paint-color analogy)
+  bcrypt, has_secure_password
+
+don't use devise
+  very secure, but tons of code
+omniauth
+sorcery
+
+application layer vs database layer
+  slow-moving data (ocean deeps) vs fast-moving data (surface currents)
+
+Permissions
+  bitfield
+  cancan

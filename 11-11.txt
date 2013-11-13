@@ -6,6 +6,7 @@ QUESTION: capybara visit and page
   rake routes: routes without prefix?
   authenticity tokens?
   references vs association_id
+  post vs patch in routes and forms
 
 build accepts column names (:genre_id => genre.id) OR abstractions of association (:genre => genre)
 
@@ -73,3 +74,13 @@ strong params
 
 `form_for @mixtape` is scoped to @mixtape
   `fields_for :songs` is further scoped to ... <6:31 - 6:38>
+
+rails log
+
+resources :mixtapes
+  resources :songs, :controller => '/mixtapes/songs', :only [:new, :create]
+end
+
+shallow routes
+
+make routes right (patch not post)

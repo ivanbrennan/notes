@@ -1,0 +1,20 @@
+delimiter = newline (allows use of `gets`)
+  unit = line
+delimiter = space
+  unit = word
+
+user_1 writes a unit
+user_2 writes a unit
+...
+user_n writes a unit
+repeat
+
+
+all screens display input in real-time
+
+Concerns
+  screen sharing
+  IO sharing/communication
+  changing unfixable mistakes
+    maybe unecessary (that's how game loses)
+    unfixable syntax errors?

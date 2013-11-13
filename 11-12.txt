@@ -1,0 +1,7 @@
+front-end/back-end cross-training
+informatics at UC Ervine
+NodeJS
+Bower
+JSHint
+RequireJS
+Underscore
